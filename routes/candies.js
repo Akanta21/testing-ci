@@ -36,6 +36,7 @@ router.post('/candies', (req, res, next) => {
      res.status(422).json({
        message: 'wrong color'
      })
+     return 
    }
    res.status(201).json({
      message: 'candies created',
