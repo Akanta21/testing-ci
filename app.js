@@ -9,6 +9,7 @@ var routes = require('./routes/candies');
 var users = require('./routes/users');
 
 var app = express();
+const port = process.env.PORT||3000
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,5 +57,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+app.listen(port, ()=>{
+  console.log(`server listening to port ${port}`)
+})
 module.exports = app;
